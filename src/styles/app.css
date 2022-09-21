@@ -1,0 +1,57 @@
+@import url('./reset.css');
+@import url('./post.css');
+
+*::selection {
+  background: var(--colors-violet5);
+  color: var(--colors-violet12);
+}
+
+body {
+  background-color: var(--colors-loContrast);
+  font-family: Yu Gothic, yugothic, ヒラギノ角ゴ ProN, Hiragino Kaku Gothic ProN,
+    メイリオ, meiryo, sans-serif;
+}
+
+/* .global-layout {
+  display: grid;
+  grid-template: 'header' auto 'contents' 1fr 'footer' auto/100%;
+  gap: 40px;
+  min-height: 100vh;
+} */
+
+.global-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  gap: 40px;
+}
+
+.global-layout__header {
+  grid-area: header;
+  position: sticky; 
+  top: 0; 
+  width: 100%;
+  background-color: rgba(245, 178, 177, 0.5);
+  z-index: 1;
+}
+
+.global-layout__contents {
+  grid-area: contents;
+  flex-grow: 1;
+  
+}
+
+.global-layout__footer {
+  grid-area: footer;
+}
+
+/* .test2css{
+  color: black;
+  font-weight: 900;
+  
+}
+.test2css:hover{
+  color: black;
+  font-size:larger;
+  opacity: 0.5;
+} */
