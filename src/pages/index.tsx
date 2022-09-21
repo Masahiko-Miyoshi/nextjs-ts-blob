@@ -40,7 +40,7 @@ const View: NextPageWithLayout<
       </Head>
      
       <Heading icon={<RiChatNewLine />} text="home3">
-        ここにダッシュボードを作るよ3。
+        ここにダッシュボードを作るよ4。
       </Heading>
 
       <div>
