@@ -1,3 +1,7 @@
+
+
+
+
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
@@ -26,12 +30,19 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
-
+            
+          yarn config set network-timeout 1000000
+  
+  # Add 2022.4.8 By MM
+      - name: Zip artifact for deployment
+        run: zip -r release.zip * .vscode .github .next .eslintrc.json .deployment -x yarn.lock
+  # 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: .
+          #path: .
+          path: release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -53,4 +64,5 @@ jobs:
           app-name: 'NextjsTsApp'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_79A21F7223884A7489574F9C9E5BEC68 }}
-          package: .
+          #package: .
+          package: release.zip
