@@ -72,6 +72,7 @@ export default function handler(req:NextApiRequest, res:NextApiResponse) {
   
   
     connection.on('end', function () {
+      console.log("Time: %s",new Date().toTimeString())
       if(!errorflg)
         res.status(200).json(content);
         return resolve();

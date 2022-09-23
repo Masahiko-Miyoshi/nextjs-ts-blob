@@ -12,11 +12,11 @@ import { Posts } from '@/components/app/Posts';
 import { PowerBI } from '@/components/app/PowerBI';
 // import { Grid } from '@/components/common/Layout';
 // import { Hero } from '@/components/home/Hero';
-// import { ReagentGraph } from '@/components/app/ReagentGraph';
+import { ReagentGraph } from '@/components/app/ReagentGraph';
 import { APP_DESCRIPTION, APP_NAME, APP_URL } from '@/config/app';
 import { getPosts } from '@/utils/getPosts';
 import type { Post } from '@/types/Post';
-
+import * as Label from '@radix-ui/react-label';
 
 type Props = {
   posts: Post[];
@@ -40,7 +40,7 @@ const View: NextPageWithLayout<
       </Head>
      
       <Heading icon={<RiChatNewLine />} text="home3">
-        ここにダッシュボードを作るよ4。
+        ここにダッシュボードを作る。
       </Heading>
 
       <div>
@@ -50,8 +50,7 @@ const View: NextPageWithLayout<
       <Posts posts={posts} />
       <section id="posts3">...</section>
       <PowerBI />
-      {/* <ReagentGraph /> */}
-      {/* <LabelDemo /> */}
+      <ReagentGraph />
       </div>
     </>
   );

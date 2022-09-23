@@ -74,7 +74,7 @@ export const ReagentGraph = () => {
       {
         fetchData();
         
-    }, 2000);
+    }, 1000);
     return ()=>{
       clearInterval(intervalId);
     } 
